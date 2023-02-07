@@ -6,16 +6,9 @@ import { StartSliderPageComponent } from './page/start-slider-page/start-slider-
 import { HeaderComponent } from './components/header/header.component';
 import { SliderComponent } from './components/slider/slider.component';
 
-
 @NgModule({
-  declarations: [
-    StartSliderPageComponent,
-    HeaderComponent,
-    SliderComponent
-  ],
-  imports: [
-    CommonModule,
-    StartSliderPageRoutingModule
-  ]
+  declarations: [StartSliderPageComponent, HeaderComponent, SliderComponent],
+  imports: [CommonModule, StartSliderPageRoutingModule],
+  exports: [StartSliderPageComponent],
 })
-export class StartSliderPageModule { }
+export class StartSliderPageModule {}
