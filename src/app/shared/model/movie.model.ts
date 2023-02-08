@@ -1,6 +1,12 @@
-export interface Movie {
+export interface ShortPlotMovie {
   Title: string;
   Year: string;
+  imdbID: string;
+  Type: string;
+  Poster: string;
+}
+
+export interface Movie extends ShortPlotMovie {
   Rated: string;
   Released: string;
   Runtime: string;
@@ -12,18 +18,21 @@ export interface Movie {
   Language: string;
   Country: string;
   Awards: string;
-  Poster: string;
   Ratings: Rating[];
   Metascore: string;
   imdbRating: string;
   imdbVotes: string;
-  imdbID: string;
-  Type: string;
   DVD: string;
   BoxOffice: string;
   Production: string;
   Website: string;
   Response: string;
+}
+
+export interface ApiResponce<T> {
+  Response: Boolean;
+  Search: T[];
+  totalResults: string;
 }
 
 interface Rating {

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Movie } from 'src/app/shared/model/movie.model';
+import { Movie, ShortPlotMovie } from 'src/app/shared/model/movie.model';
 
 @Component({
   selector: 'app-trends-card',
