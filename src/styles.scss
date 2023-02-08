@@ -1,4 +1,9 @@
+@import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
 
 .wrap {
   padding: 0 160px;
+}
+
+.pink-text{
+  color: $pink-400;
 }
