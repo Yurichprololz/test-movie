@@ -1,11 +1,12 @@
+<div class="wrap bg-dark">
 <p class="h3 lead fw-bold">В тренде</p>
 <div class="d-flex align-items-center justify-content-center">
   <div class="col">
-    <button class="btn">Все</button><button class="btn">Экшен</button
-    ><button class="btn">Фантастика</button
-    ><button class="btn">Приключения</button
-    ><button class="btn">Анимация</button><button class="btn">Биография</button
-    ><button class="btn">Комедия</button><button class="btn">Драма</button>
+    <button class="btn nav-btn">Все</button><button class="btn nav-btn">Экшен</button
+    ><button class="btn nav-btn">Фантастика</button
+    ><button class="btn nav-btn">Приключения</button
+    ><button class="btn nav-btn">Анимация</button><button class="btn nav-btn">Биография</button
+    ><button class="btn nav-btn">Комедия</button><button class="btn nav-btn">Драма</button>
   </div>
   <button class="btn">Смотреть всё</button>
 </div>
@@ -13,3 +14,4 @@
   *ngFor="let movie of movies"
   [movie]="movie"
 ></app-trends-card>
+</div>

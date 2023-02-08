@@ -11,7 +11,7 @@ export class SetImageAsBgDirective implements OnInit {
   constructor(private element :ElementRef, private ref: Renderer2) { }
 
   ngOnInit() {
-    this.ref.setStyle(this.element.nativeElement, 'background-image', `url(${this.movie.Poster})`);
+    this.ref.setStyle(this.element.nativeElement, 'background', `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url(${this.movie.Poster})`);
   }
 
 }
