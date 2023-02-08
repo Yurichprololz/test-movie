@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { catchError, debounceTime, distinctUntilChanged, EMPTY, filter, fromEvent, map, switchMap, tap } from 'rxjs';
 import { APIService } from '../../services/api.service';
 import { SearchService } from '../../services/search.service';
 
@@ -8,4 +7,6 @@ import { SearchService } from '../../services/search.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent {}
+export class SearchComponent {
+  constructor(private searchService :SearchService, private API: APIService){}
+}

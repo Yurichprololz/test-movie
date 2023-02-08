@@ -4,7 +4,6 @@ import {
   fromEvent,
   debounceTime,
   map,
-  tap,
   switchMap,
   filter,
   distinctUntilChanged,
@@ -18,20 +17,20 @@ import {
 export class SearchService {
   constructor(private API: APIService) {}
 
-  searchList() {
-    const input = document.getElementById('search') as HTMLInputElement;
-    return fromEvent(input, 'input').pipe(
-      map((event: Event) => event.target as HTMLInputElement),
-      map((input) => input.value),
-      tap((input) => console.log(input)),
-      debounceTime(500),
-      distinctUntilChanged(),
-      filter((value) => value.length > 2 || value.length === 0),
-      switchMap((word) => this.API.getMovies(word)),
-      catchError(() => EMPTY)
-    );
+  searchList(){
+    const inputEl = document.getElementById('search') as HTMLInputElement;
+    return fromEvent(inputEl, 'input')
+      .pipe(
+        map((event:Event) => event.target as HTMLInputElement),
+        map((input) => input.value),
+        debounceTime(500),
+        distinctUntilChanged(),
+        filter((value) => value !== ''),
+        filter((value) => value.length > 2),
+        switchMap((word) => this.API.getMovies(word)),
+        catchError(() => EMPTY),
+      );
   }
-
   getSingleVideo(id: string) {
     return this.API.getFullInfo(id);
   }

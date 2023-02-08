@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { map, Subscription, take, tap } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { APIService } from 'src/app/core/services/api.service';
 import { SearchService } from 'src/app/core/services/search.service';
-import { Movie, ShortPlotMovie } from 'src/app/shared/model/movie.model';
+import { Movie } from 'src/app/shared/model/movie.model';
 
 @Component({
   selector: 'app-trends-page',
@@ -20,11 +20,7 @@ export class TrendsPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.search$ = this.search
-      .searchList().pipe(tap(() => this.movies$ = []))
-      .subscribe((videos) =>
-        videos.forEach(
-          (video) => video.subscribe((film) => this.movies$.push(film))
-        )
-      );
+      .searchList()
+      .subscribe((videos) => this.movies$ = videos);
   }
 }

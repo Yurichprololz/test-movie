@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, mergeMap, of } from 'rxjs';
+import { forkJoin, map, mergeMap, Observable, of } from 'rxjs';
 import {
   ApiResponce,
   Movie,
@@ -26,7 +26,9 @@ export class APIService {
       })
       .pipe(
         map((responce) => responce.Search.map((film) => film.imdbID)),
-        mergeMap(async (IDs: string[]) => IDs.map((id) => this.getFullInfo(id)))
+        mergeMap((IDs: string[]) =>
+          forkJoin(IDs.map((id) => this.getFullInfo(id)))
+        )
       );
   }
 
@@ -39,9 +41,9 @@ export class APIService {
       params,
     });
   }
-  getMock() {
+  getMock(): Observable<Movie[]> {
     return of([
-      of({
+      {
         Title: 'The Batman',
         Year: '2022',
         Rated: 'PG-13',
@@ -81,7 +83,7 @@ export class APIService {
         Production: 'N/A',
         Website: 'N/A',
         Response: 'True',
-      }),
+      },
     ]);
   }
 }
