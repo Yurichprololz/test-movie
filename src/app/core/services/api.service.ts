@@ -15,6 +15,7 @@ export class APIService {
   constructor(private http: HttpClient) {}
 
   getMovies(search: string) {
+    // return this.getMock()
     const params = new HttpParams()
       .set('apikey', environment.apiKey)
       .set('s', search);

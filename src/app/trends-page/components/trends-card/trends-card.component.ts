@@ -8,5 +8,5 @@ import { Movie, ShortPlotMovie } from 'src/app/shared/model/movie.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TrendsCardComponent {
-  @Input() movie!: Movie
+  @Input() movie: Movie | undefined;
 }

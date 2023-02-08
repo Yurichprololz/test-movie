@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { map, Subscription, take } from 'rxjs';
+import { map, Subscription, take, tap } from 'rxjs';
 import { APIService } from 'src/app/core/services/api.service';
+import { SearchService } from 'src/app/core/services/search.service';
 import { Movie, ShortPlotMovie } from 'src/app/shared/model/movie.model';
 
 @Component({
@@ -10,20 +11,19 @@ import { Movie, ShortPlotMovie } from 'src/app/shared/model/movie.model';
 })
 export class TrendsPageComponent implements OnInit, OnDestroy {
   movies$: Movie[] = [];
-  sub: Subscription | undefined;
+  search$: Subscription | undefined;
 
-  constructor(private api: APIService) {}
+  constructor(private api: APIService, private search: SearchService) {}
   ngOnDestroy(): void {
-    this.sub?.unsubscribe();
+    this.search$?.unsubscribe();
   }
 
   ngOnInit(): void {
-    this.sub = this.api
-      .getMovies('batman')
+    this.search$ = this.search
+      .searchList().pipe(tap(() => this.movies$ = []))
       .subscribe((videos) =>
-        videos.forEach((video) =>
-          video.subscribe((film) => this.movies$.push(film)),
-          take(1)
+        videos.forEach(
+          (video) => video.subscribe((film) => this.movies$.push(film))
         )
       );
   }

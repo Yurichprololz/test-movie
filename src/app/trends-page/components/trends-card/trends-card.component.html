@@ -3,15 +3,15 @@
   [dirSetBg]="movie"
 >
   <div class="label text-center bg-opacity-75 bg-gradient py-2">
-    {{ movie.Runtime }}
+    {{ movie?.Runtime }}
   </div>
   <div class="description">
     <div class="rate pb-2">
       <span class="bg-warning p-2 me-3 rounded">IMDb</span>
-      <span>{{ movie.imdbRating }}</span>
+      <span>{{ movie?.imdbRating }}</span>
     </div>
-    <p class="year mb-0 fw-light">{{ movie.Year }}</p>
-    <p class="lead lh-1 fw-bold">{{ movie.Title }}</p>
+    <p class="year mb-0 fw-light">{{ movie?.Year }}</p>
+    <p class="lead lh-1 fw-bold">{{ movie?.Title }}</p>
     <a href="#" class="link-light mb-0 text-decoration-none">Смотреть онлайн</a>
   </div>
 </div>
