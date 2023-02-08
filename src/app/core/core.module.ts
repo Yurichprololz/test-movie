@@ -4,9 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoreRoutingModule } from './core-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent, SearchComponent],
   imports: [CommonModule, CoreRoutingModule, HttpClientModule],
   exports: [HeaderComponent, FooterComponent],
 })
