@@ -26,11 +26,5 @@ export class TrendsPageComponent implements OnInit, OnDestroy {
           take(1)
         )
       );
-    // this.api.getMovies('batman').pipe(
-    //   map((video) => {
-    //     console.log(video);
-    //     this.movies$ = video;
-    //   }),
-    // );
   }
 }
