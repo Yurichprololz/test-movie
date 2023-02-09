@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { NavigateService } from 'src/app/core/services/navigate.service';
 import { Movie } from 'src/app/shared/model/movie.model';
 
 @Component({
@@ -9,4 +10,12 @@ import { Movie } from 'src/app/shared/model/movie.model';
 })
 export class TrendsCardComponent {
   @Input() movie: Movie | undefined;
+  constructor(private navigate: NavigateService) {}
+
+  toDetailedPage() {
+    console.log('Here')
+    if (this.movie && this.movie.imdbID) {
+      this.navigate.toDetailedPage(this.movie.imdbID);
+    }
+  }
 }
