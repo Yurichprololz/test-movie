@@ -76,7 +76,8 @@ export class APIService {
     });
     const params = new HttpParams()
       .set('apikey', environment.apiKey)
-      .set('i', id);
+      .set('i', id)
+      .set('plot', 'full')
 
     return this.http.get<Movie>(environment.apiUrl, {
       params,
