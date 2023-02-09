@@ -10,6 +10,7 @@ import { Movie } from 'src/app/shared/model/movie.model';
   templateUrl: './detailed-page.component.html',
   styleUrls: ['./detailed-page.component.scss'],
 })
+
 export class DetailedPageComponent implements OnInit {
   movie: Movie | undefined;
   id: string | undefined;
@@ -27,13 +28,16 @@ export class DetailedPageComponent implements OnInit {
       this.searchService.getSingleVideo(this.id).subscribe({
         next: async (movie) => {
           this.movie = movie;
-          // await this.donwloadImage(this.video.snippet.thumbnails.default.url);
         },
         error: (error) => {
           console.log(error);
-          this.navigator.goHome();
+          this.goHome();
         },
       });
     }
+  }
+
+  goHome(){
+    this.navigator.goHome()
   }
 }

@@ -43,7 +43,7 @@ export class APIService {
       Director: 'Matt Reeves',
       Writer: 'Matt Reeves, Peter Craig, Bob Kane',
       Actors: 'Robert Pattinson, Zoë Kravitz, Jeffrey Wright',
-      Plot: "When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.",
+      Plot: "When his parents are killed, billionaire playboy Bruce Wayne relocates to Asia, where he is mentored by Henri Ducard and Ra's Al Ghul in how to fight evil. When learning about the plan to wipe out evil in Gotham City by Ducard, Bruce prevents this plan from getting any further and heads back to his home. Back in his original surroundings, Bruce adopts the image of a bat to strike fear into the criminals and the corrupt as the icon known as Batman. But it doesn't stay quiet for long.",
       Language: 'English, Spanish, Latin, Italian',
       Country: 'United States',
       Awards: 'Nominated for 4 BAFTA 19 wins & 115 nominations total',

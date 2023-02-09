@@ -1,13 +1,14 @@
 <div class="root-el-container wrap bg-dark d-flex justify-content-center align-items-center">
-  <div class="window d-flex border rounded w-75">
+  <div class="window d-flex border rounded w-100 position-relative align-items-center">
     <img src="{{movie?.Poster}}">
     <div class="decription p-5 pt-2">
-      <p class="pink-text fw-bold h3">{{ movie?.Title }}</p>
+      <p class="pink-text fw-bold h2">{{ movie?.Title }}</p>
       <p class="text-white fs-4 m-0">Год: {{ movie?.Year }}</p>
       <p class="text-white fs-4 m-0">Продолжительность: {{ movie?.Runtime }}</p>
       <p class="text-white fs-4 m-0">Жанр: {{ movie?.Genre }}</p>
       <p class="text-white fs-4 mb-3">Страна: {{ movie?.Country }}</p>
       <p class="text-white fs-5">Описание: {{ movie?.Plot }}</p>
     </div>
+    <div class="back-button" (click)="goHome()">&lt;</div>
   </div>
 </div>
