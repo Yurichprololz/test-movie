@@ -13,7 +13,6 @@ export class TrendsCardComponent {
   constructor(private navigate: NavigateService) {}
 
   toDetailedPage() {
-    console.log('Here')
     if (this.movie && this.movie.imdbID) {
       this.navigate.toDetailedPage(this.movie.imdbID);
     }
