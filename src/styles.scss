@@ -1,20 +1,26 @@
 @import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
+@import './mixins';
 
-.wrap {
-  padding: 0 180px;
-  margin: 0;
-}
-
-.root-el-container{
-  width: 100%;
-  height : 720px;
-  overflow-y: hidden;
-}
-
-.pink-text{
+.pink-text {
   color: $pink-400;
 }
 
-.darker-bg{
+.darker-bg {
   background-color: #131315;
+}
+
+.wrap {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.root-el-container {
+  height: 720px;
+  overflow-y: hidden;
+  @include pc(){
+    height: 1080px;
+  }
+  @include laptop() {
+    height: 600px;
+  }
 }

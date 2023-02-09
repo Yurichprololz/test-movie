@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { APIService } from 'src/app/core/services/api.service';
 import { DisableButtonService } from 'src/app/core/services/disable-button.service';
@@ -8,7 +8,7 @@ import { Movie } from 'src/app/shared/model/movie.model';
 @Component({
   selector: 'app-trends-page',
   templateUrl: './trends-page.component.html',
-  styleUrls: ['./trends-page.component.scss'],
+  styleUrls: ['./trends-page.component.scss']
 })
 export class TrendsPageComponent implements OnInit, OnDestroy {
   movies$: Movie[] = [];
@@ -16,6 +16,8 @@ export class TrendsPageComponent implements OnInit, OnDestroy {
 
   constructor(private api: APIService, private search: SearchService, private disableButtonService:DisableButtonService) {}
 
+
+  @HostBinding('class.bg-dark')
   ngOnInit(): void {
     this.disableButtonService.isDisable(false)
 

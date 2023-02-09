@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DisableButtonService } from 'src/app/core/services/disable-button.service';
 import { NavigateService } from 'src/app/core/services/navigate.service';
@@ -20,6 +20,8 @@ export class DetailedPageComponent implements OnInit {
     private searchService: SearchService,
     private navigator: NavigateService
   ) {}
+
+  @HostBinding('class.bg-dark')
 
   ngOnInit(): void {
     this.disableButtonService.isDisable(true);

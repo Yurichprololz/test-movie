@@ -1,7 +1,14 @@
+@import "../../../../mixins.scss";
+
 .card {
   width: 246px;
   height: 344px;
   font-size: 13px;
+
+  @include laptop {
+    width: 200px;
+    height: 280px;
+  }
 }
 
 .label {
