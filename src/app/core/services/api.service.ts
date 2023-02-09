@@ -15,7 +15,6 @@ export class APIService {
   constructor(private http: HttpClient) {}
 
   getMovies(search: string) {
-    return this.getMock();
     const params = new HttpParams()
       .set('apikey', environment.apiKey)
       .set('s', search);
@@ -33,47 +32,6 @@ export class APIService {
   }
 
   getFullInfo(id: string) {
-    return of({
-      Title: 'The Batman ',
-      Year: '2022',
-      Rated: 'PG-13',
-      Released: '04 Mar 2022',
-      Runtime: '176 min',
-      Genre: 'Action, Crime, Drama',
-      Director: 'Matt Reeves',
-      Writer: 'Matt Reeves, Peter Craig, Bob Kane',
-      Actors: 'Robert Pattinson, Zoë Kravitz, Jeffrey Wright',
-      Plot: "When his parents are killed, billionaire playboy Bruce Wayne relocates to Asia, where he is mentored by Henri Ducard and Ra's Al Ghul in how to fight evil. When learning about the plan to wipe out evil in Gotham City by Ducard, Bruce prevents this plan from getting any further and heads back to his home. Back in his original surroundings, Bruce adopts the image of a bat to strike fear into the criminals and the corrupt as the icon known as Batman. But it doesn't stay quiet for long.",
-      Language: 'English, Spanish, Latin, Italian',
-      Country: 'United States',
-      Awards: 'Nominated for 4 BAFTA 19 wins & 115 nominations total',
-      Poster:
-        'https://m.media-amazon.com/images/M/MV5BMDdmMTBiNTYtMDIzNi00NGVlLWIzMDYtZTk3MTQ3NGQxZGEwXkEyXkFqcGdeQXVyMzMwOTU5MDk@._V1_SX300.jpg',
-      Ratings: [
-        {
-          Source: 'Internet Movie Database',
-          Value: '7.8/10',
-        },
-        {
-          Source: 'Rotten Tomatoes',
-          Value: '85%',
-        },
-        {
-          Source: 'Metacritic',
-          Value: '72/100',
-        },
-      ],
-      Metascore: '72',
-      imdbRating: '7.8',
-      imdbVotes: '657,733',
-      imdbID: 'tt1877830',
-      Type: 'movie',
-      DVD: '19 Apr 2022',
-      BoxOffice: '$369,345,583',
-      Production: 'N/A',
-      Website: 'N/A',
-      Response: 'True',
-    });
     const params = new HttpParams()
       .set('apikey', environment.apiKey)
       .set('i', id)
