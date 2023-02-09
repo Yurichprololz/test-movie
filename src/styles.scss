@@ -15,12 +15,13 @@
 }
 
 .root-el-container {
-  height: 720px;
+  min-height: 720px;
   overflow-y: hidden;
-  @include pc(){
-    height: 1080px;
-  }
+
   @include laptop() {
-    height: 600px;
+    min-height: 600px;
+  }
+  @include tablet(){
+    height: auto;
   }
 }
